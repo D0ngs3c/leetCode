@@ -1,4 +1,4 @@
-class Solution():
+'''class Solution():
     def __init__(self, nums, target):
         
         self.nums = []
@@ -14,3 +14,4 @@ class Solution():
                 if sum == target :
                     print('[%d,%d]'%(i,j))
                 j -= 1		
+'''
