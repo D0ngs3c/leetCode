@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Version : $python2.7$
 
+#https://leetcode.com/problems/single-element-in-a-sorted-array/description/
 '''
 Given a sorted array consisting of only integers where every element appears twice except for one element which appears once.
 Find this single element that appears only once.
@@ -61,5 +62,3 @@ if __name__ == '__main__':
     print a.singleNonDuplicate(l1)
     print a.singleNonDuplicate(l2)
     print a.singleNonDuplicate(l3)
-
-#https://leetcode.com/problems/single-element-in-a-sorted-array/description/
