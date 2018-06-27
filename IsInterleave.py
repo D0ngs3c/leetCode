@@ -47,7 +47,7 @@ class Solution:
 
 
 
-
+#测试实例
 if __name__ == '__main__':
     a = Solution()
     s1 = "aabcc"
