@@ -49,6 +49,7 @@ class Solution2(object):
         :type prices: List[int]
         :rtype: int
         """
+        #设Min为无穷大数
         Min = float("inf")
         Max = 0
 
