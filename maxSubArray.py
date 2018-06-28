@@ -96,8 +96,7 @@ class Solution2(object):
             Sum += nums[i]
             rightSum = max(rightSum, Sum)
             
-        output = max(leftSum + rightSum, max(leftMax, rightMax))
-        return  output
+        return max(leftSum + rightSum, max(leftMax, rightMax))
 
 # Time complexity O(nlogn)
 # Space  complexity O(1)
