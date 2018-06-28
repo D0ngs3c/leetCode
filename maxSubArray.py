@@ -37,7 +37,6 @@ class Solution(object):
 
 #分治法
 
-
 #测试实例
 if __name__ == '__main__':
     a = Solution()
