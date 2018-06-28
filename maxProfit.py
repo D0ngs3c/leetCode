@@ -53,7 +53,7 @@ class Solution2(object):
         Max = 0
 
         #在买入的价格足够小的情况下，判断价格差最大
-        for i in range(len(prices)-1):
+        for i in range(len(prices)):
             if prices[i] < Min:
                 Min = prices[i]
             elif prices[i] - Min > Max:
@@ -70,13 +70,17 @@ if __name__ == '__main__':
     price1 = [7,1,5,3,6,4]
     price2 = [7,6,4,3,1]
     price3 = []
+    price4 = [1,2]
 
 
     print a.maxProfit(price1)
     print b.maxProfit(price1)
-
+    print "+++++++++"
     print a.maxProfit(price2)
     print b.maxProfit(price2)
-
+    print "+++++++++"
     print a.maxProfit(price3)
     print b.maxProfit(price3)
+    print "+++++++++"
+    print a.maxProfit(price4)
+    print b.maxProfit(price4)
