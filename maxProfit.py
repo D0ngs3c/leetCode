@@ -49,7 +49,7 @@ class Solution2(object):
         :type prices: List[int]
         :rtype: int
         """
-        Min = prices[0]
+        Min = float("inf")
         Max = 0
 
         #在买入的价格足够小的情况下，判断价格差最大
@@ -69,9 +69,14 @@ if __name__ == '__main__':
     b = Solution2()
     price1 = [7,1,5,3,6,4]
     price2 = [7,6,4,3,1]
+    price3 = []
+
 
     print a.maxProfit(price1)
     print b.maxProfit(price1)
 
     print a.maxProfit(price2)
     print b.maxProfit(price2)
+
+    print a.maxProfit(price3)
+    print b.maxProfit(price3)
