@@ -17,7 +17,7 @@ Follow up:
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 '''
 
-#Kadane算法 
+#法一：Kadane算法 
 class Solution(object):
     def maxSubArray(self, nums):
         """
@@ -37,7 +37,7 @@ class Solution(object):
 # Time complexity O(n)
 # Space  complexity O(1)
 
-# 利用动态规划的思想完成，时间复杂度为O(n)：
+# 法二：利用动态规划的思想完成，时间复杂度为O(n)：
 # 1）状态转移公式：sum[i]=max(sum[i-1]+nums[i], nums[i]) //局部最优解
 #                  m = max(m, sum[i]) //全局最优解
 
@@ -58,7 +58,7 @@ class Solution1(object):
 # Time complexity O(n)
 # Space  complexity O(1)
 
-#分治法（divide and conquer，D&C）
+#法三：分治法（divide and conquer，D&C）
 # 使用分治解决问题的过程包括两个步骤：
 # 1.找出基线条件，这种条件必须尽可能简单
 # 2.不断将问题分解，或者说缩小规模，直到符合基线条件
@@ -99,16 +99,16 @@ class Solution2(object):
         output = max(leftSum + rightSum, max(leftMax, rightMax))
         return  output
 
-
-
 # Time complexity O(nlogn)
 # Space  complexity O(1)
+
+
 #测试实例
 if __name__ == '__main__':
     a = Solution()
     b = Solution1()
     c = Solution2()
     nums = [-2,1,-3,4,-1,2,1,-5,4]
-    # print a.maxSubArray(nums)
+    print a.maxSubArray(nums)
     print b.maxSubArray(nums)
     print c.maxSubArray(nums)
