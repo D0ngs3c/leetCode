@@ -5,13 +5,13 @@
 '''
 https://leetcode.com/problems/maximum-subarray/description/
 
-Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest Tmp and return its Tmp.
 
 Example:
 
 Input: [-2,1,-3,4,-1,2,1,-5,4],
 Output: 6
-Explanation: [4,-1,2,1] has the largest sum = 6.
+Explanation: [4,-1,2,1] has the largest Tmp = 6.
 
 Follow up:
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
@@ -38,8 +38,8 @@ class Solution(object):
 # Space  complexity O(1)
 
 # 法二：利用动态规划的思想完成，时间复杂度为O(n)：
-# 1）状态转移公式：sum[i]=max(sum[i-1]+nums[i], nums[i]) //局部最优解
-#                  m = max(m, sum[i]) //全局最优解
+# 1）状态转移公式：Tmp[i]=max(Tmp[i-1]+nums[i], nums[i]) //局部最优解
+#                  m = max(m, Tmp[i]) //全局最优解
 
 class Solution1(object):
     def maxSubArray(self, nums):
@@ -80,21 +80,23 @@ class Solution2(object):
         if low == high:
             return nums[low]
 
-        mid = low + (high - low)/2
+        mid = (low + high)/2
         leftMax = self.solve(nums, low, mid)
         rightMax = self.solve(nums, mid+1, high)
 
+        #计算左子串最右边的最大子串和
         leftSum = nums[mid]
-        Sum = nums[mid]
+        Tmp = nums[mid]
         for i in range(mid-1, low, -1):
-            Sum += nums[i]
-            leftSum = max(leftSum, Sum)
+            Tmp += nums[i]
+            leftSum = max(leftSum, Tmp)
 
+        #计算右子串最左边最大子串和
         rightSum = nums[mid + 1]
-        Sum = nums[mid + 1]
+        Tmp = nums[mid + 1]
         for i in range(mid+2,high+1):
-            Sum += nums[i]
-            rightSum = max(rightSum, Sum)
+            Tmp += nums[i]
+            rightSum = max(rightSum, Tmp)
             
         return max(leftSum + rightSum, max(leftMax, rightMax))
 
