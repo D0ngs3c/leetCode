@@ -23,7 +23,7 @@ Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 '''
-#暴力破解
+#暴力破解：遍历数组，找出最大价格差。
 class Solution1(object):
     def maxProfit(self, prices):
         """
