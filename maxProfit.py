@@ -52,6 +52,7 @@ class Solution2(object):
         Min = prices[0]
         Max = 0
 
+        #在买入的价格足够小的情况下，判断价格差最大
         for i in range(len(prices)-1):
             if prices[i] < Min:
                 Min = prices[i]
