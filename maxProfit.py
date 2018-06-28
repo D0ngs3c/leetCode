@@ -23,7 +23,7 @@ Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 '''
-#暴力破解：遍历数组，找出最大价格差。
+#暴力破解：遍历数组，找出最大价格差。由于时间复杂度过大，在LeetCode中可以通过运行测试但不能通过提交。
 class Solution1(object):
     def maxProfit(self, prices):
         """
