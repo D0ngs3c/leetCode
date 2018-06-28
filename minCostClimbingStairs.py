@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Date    : 2018-06-28 08:22:34
 # @Version : $python2.7$
 
 '''
@@ -34,21 +33,9 @@ class Solution(object):
         for i in cost:
             f1, f2 = i + min(f1, f2), f1
         return min(f1, f2)
-        # if not cost:
-        #     return 0
 
-        # if len(cost) == 1:
-        #     return cost[0]
 
-        # # dp = []    
-        # # for i in range(len(cost)):
-        # #     dp.append(cost[i])
-        # a = 0
-        # b = cost[0]
-        # # return dp
-        # for i in range(len(cost)):
-        #     dp[i] = min(dp[i-1], dp[i-2] + cost[i])
-
+#测试实例
 if __name__ == '__main__':
     a = Solution()
     cost1 = [10, 15, 20]
