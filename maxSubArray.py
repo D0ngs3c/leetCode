@@ -34,11 +34,12 @@ class Solution(object):
             max_so_far = max(max_so_far, max_ending_here)
         return max_so_far
     
+# Time complexity O(n)
+# Space  complexity O(1)
 
-# 利用动态规划的思想完成，时间复杂度为O(n)。已知0,..,k的最大和以后，0,...k+1的最大和为：
+# 利用动态规划的思想完成，时间复杂度为O(n)：
 # 1）状态转移公式：sum[i]=max(sum[i-1]+nums[i], nums[i]) //局部最优解
 #                  m = max(m, sum[i]) //全局最优解
-# 2）sum[k+1]=A[k+1]。
 
 class Solution1(object):
     def maxSubArray(self, nums):
@@ -54,13 +55,60 @@ class Solution1(object):
             m = max(m, s)
         return m
 
+# Time complexity O(n)
+# Space  complexity O(1)
 
-#分治法
+#分治法（divide and conquer，D&C）
+# 使用分治解决问题的过程包括两个步骤：
+# 1.找出基线条件，这种条件必须尽可能简单
+# 2.不断将问题分解，或者说缩小规模，直到符合基线条件
 
+# 将数组均分为两个部分，那么最大子数组会存在于：
+# 左侧数组的最大子数组
+# 右侧数组的最大子数组
+# 左侧数组的以右侧边界为边界的最大子数组+右侧数组的以左侧边界为边界的最大子数组
+
+class Solution2(object):
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return self.solve(nums, 0, len(nums)-1)
+
+    def solve(self, nums, low, high):
+        if low == high:
+            return nums[low]
+
+        mid = low + (high - low)/2
+        leftMax = self.solve(nums, low, mid)
+        rightMax = self.solve(nums, mid+1, high)
+
+        leftSum = nums[mid]
+        Sum = nums[mid]
+        for i in range(mid-1, low, -1):
+            Sum += nums[i]
+            leftSum = max(leftSum, Sum)
+
+        rightSum = nums[mid + 1]
+        Sum = nums[mid + 1]
+        for i in range(mid+2,high+1):
+            Sum += nums[i]
+            rightSum = max(rightSum, Sum)
+            
+        output = max(leftSum + rightSum, max(leftMax, rightMax))
+        return  output
+
+
+
+# Time complexity O(nlogn)
+# Space  complexity O(1)
 #测试实例
 if __name__ == '__main__':
     a = Solution()
     b = Solution1()
+    c = Solution2()
     nums = [-2,1,-3,4,-1,2,1,-5,4]
     # print a.maxSubArray(nums)
     print b.maxSubArray(nums)
+    print c.maxSubArray(nums)
