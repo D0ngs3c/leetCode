@@ -49,7 +49,7 @@ class Solution2(object):
         :type prices: List[int]
         :rtype: int
         """
-        Min = prices
+        Min = prices[0]
         Max = 0
 
         for i in range(len(prices)-1):
@@ -58,6 +58,9 @@ class Solution2(object):
             elif prices[i] - Min > Max:
                 Max = prices[i] - Min 
         return Max
+
+# Time complexity O(n)
+# Space  complexity O(1)
 
 # 测试实例
 if __name__ == '__main__':
