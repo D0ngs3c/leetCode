@@ -68,6 +68,8 @@ class Solution(object):
 
 
 #递推式：ans[n] = ans[n >> 1] + (n & 1)
+# 规律是，从1开始，遇到偶数时，其1的个数和该偶数除以2得到的数字的1的个数相同
+# 遇到奇数时，其1的个数等于该奇数除以2得到的数字的1的个数再加1
 class Solution1(object):
     def countBits(self, num):
         """
