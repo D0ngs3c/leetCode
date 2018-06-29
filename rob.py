@@ -30,9 +30,9 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
          dp[1] = max(nums[0] + nums[1])
 
 3、状态转移公式:dp[i] =  
-                        dp[i] = nums[0];                         i = 0
-                        dp[i] = max(nums[0] + nums[1];           i = 1
-                        dp[i] = max(dp[i-1], dp[i-2] + nums[i]); other
+                        dp[i] = nums[0];                          i = 0
+                        dp[i] = max(nums[0] + nums[1];            i = 1
+                        dp[i] = max(dp[i-1], dp[i-2] + nums[i]);  other
 
 思路理清了，coding easy!
 '''
