@@ -1,4 +1,4 @@
-### leetCode_Python2.7
+### leetCode
 This is a summary of my practice with LeetCode
 
 #### 动态规划（Dynamic Programming）
