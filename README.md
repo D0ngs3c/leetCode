@@ -1,5 +1,4 @@
 ### leetCode
-This is a summary of my practice with LeetCode
 
 #### 动态规划（Dynamic Programming）
 动态规划问题要从三个方面思考：
