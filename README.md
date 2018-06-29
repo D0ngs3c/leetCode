@@ -1,7 +1,7 @@
 ### leetCode_Python2.7
 This is a summary of my practice with LeetCode
 
-##### 动态规划（Dynamic Programming）
+#### 动态规划（Dynamic Programming）
 动态规划问题要从三个方面思考：
 - 最优子结构
 - 边界
