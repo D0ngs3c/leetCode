@@ -13,6 +13,7 @@ class Solution():
             n >>=  1
         return count
 
+
 #测试实例
 if __name__ == '__main__':
     a = Solution()
