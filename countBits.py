@@ -59,7 +59,6 @@ class Solution(object):
                 if i > num:
                     break
                 tmp = (2**k - 2**(k-1))/2
-                # for j in range(2*k -2*(k-1)):
                 if i < (2**(k-1) + tmp):
                     res.append(res[i-tmp])
                 else:
