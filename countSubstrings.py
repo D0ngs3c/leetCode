@@ -65,6 +65,9 @@ class Solution1():
                     res += 1
         return res,s
 
+# Time complexity O(n^2)
+# Space complexity O(n)
+
 #测试实例
 if __name__ == '__main__':
     a = Solution1()
