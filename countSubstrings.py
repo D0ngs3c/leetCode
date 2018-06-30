@@ -48,9 +48,26 @@ class Solution():
 # Time complexity O(n)
 # Space complexity O(1)
 
+
+#判断dp[i][j]是否为回文串
+class Solution1():
+    def countSubstrings(self,str):
+        if not str:
+            return 0
+        s = []
+        res = 0
+        dp  = [[False] * len(str)] * len(str)
+        for i in range(len(str)-1, -1, -1):
+            for j in range(i, len(str)):
+                dp[i][j] = (str[i] == str[j]) and (j - i <= 2 or dp[i + 1][j - 1])
+                s.append(str[i:j+1])
+                if dp[i][j]:
+                    res += 1
+        return res,s
+
 #测试实例
 if __name__ == '__main__':
-    a = Solution()
+    a = Solution1()
     str = "aaa"
     str1 = "abc"
     str2 = "aa"
