@@ -29,12 +29,10 @@ class Solution():
     def countSubstrings(self, str):
         if not str:
             return 0
-        s = []
         res = 0
         for i in range(len(str)):
             j = i
             while  (i >= 0 and j < len(str) and str[i] == str[j]):
-                s.append(str[i:j+1])
                 i -= 1
                 j += 1
                 res += 1
@@ -42,14 +40,15 @@ class Solution():
         for i in range(len(str)):
             j = i + 1
             while  (i >= 0 and j < len(str) and str[i] == str[j]):
-                s.append(str[i:j+1])
                 i -= 1
                 j += 1
                 res += 1
+        return res
 
-        return res,s
+# Time complexity O(n)
+# Space complexity O(1)
 
-
+#测试实例
 if __name__ == '__main__':
     a = Solution()
     str = "aaa"
