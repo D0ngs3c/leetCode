@@ -60,8 +60,9 @@ class Solution1():
         for i in range(len(str)-1, -1, -1):
             for j in range(i, len(str)):
                 dp[i][j] = (str[i] == str[j]) and (j - i <= 2 or dp[i + 1][j - 1])
-                s.append(str[i:j+1])
+
                 if dp[i][j]:
+                    s.append(str[i:j+1])
                     res += 1
         return res,s
 
