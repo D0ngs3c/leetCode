@@ -47,14 +47,36 @@ class Solution(object):
                     res += 1
                     s.append(A[i:j+1])
                 else:
-                    break
+                    break   
 
         return res,s
 # Time complexity O(n^2)
 # Space complexity O(1)
 
+class Solution1(object):
+    def numberOfArithmeticSlices(self, A):
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        sum = 0
+        res = 0
+        for i in range(2, len(A)):
+            if A[i] - A[i-1] == A[i-1] - A[i-2]:
+                sum += 1
+                res += sum 
+            else:
+                sum = 0
+
+        return res
+
+#Time complexity O(n)
+#Space complexity O(1)
+
 #测试实例
 if __name__ == '__main__':
     a = Solution()
-    A = [1, 2, 3, 4]
+    b = Solution1()
+    A = [1,3,5,7,9,15,20,25,28,29]
     print a.numberOfArithmeticSlices(A)
+    print b.numberOfArithmeticSlices(A)
