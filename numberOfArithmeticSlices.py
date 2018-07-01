@@ -27,7 +27,7 @@ A = [1, 2, 3, 4]
 return: 3, for 3 arithmetic slices in A: [1, 2, 3], [2, 3, 4] and [1, 2, 3, 4] itself.
 
 '''
-
+#以每个子数列的首个数字为基准，遍历整个数组
 class Solution(object):
     def numberOfArithmeticSlices(self, A):
         """
@@ -50,8 +50,10 @@ class Solution(object):
                     break
 
         return res,s
+# Time complexity O(n^2)
+# Space complexity O(1)
 
-
+#测试实例
 if __name__ == '__main__':
     a = Solution()
     A = [1, 2, 3, 4]
