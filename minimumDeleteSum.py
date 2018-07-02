@@ -76,8 +76,8 @@ class Solution1(object):
             dp = ndp
         return dp[-1]
 
-        
-        
+
+
 # #自底而上
 class Solution2(object):
     def minimumDeleteSum(self, s1, s2):
@@ -91,9 +91,9 @@ class Solution2(object):
         for i in range(1, len(s1) + 1):
             for j in range(1, len(s2) + 1):
                 dp[i][j] = (dp[i - 1][j - 1]  if s1[i - 1] == s2[j - 1] else min(dp[i - 1][j] + ord(s1[i - 1]), dp[i][j - 1] + ord(s2[j - 1])))
-        #     a = 0 if ord(s1[i-1]) == ord(s2[j-1]) else ord(s1[i-1]) + ord(s2[j-1])
-        # #比较三种情况
-        #     dp[i][j] = min(dp[i-1][j-1] + a, min(dp[i-1][j] + ord(s1[i-1]), dp[i][j-1] + ord(s2[j-1])))
+                # a = 0 if ord(s1[i-1]) == ord(s2[j-1]) else ord(s1[i-1]) + ord(s2[j-1])
+                # 比较三种情况
+                # dp[i][j] = min(dp[i-1][j-1] + a, min(dp[i-1][j] + ord(s1[i-1]), dp[i][j-1] + ord(s2[j-1])))
 
         return dp[len(s1)][len(s2)]
 
