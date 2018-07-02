@@ -45,6 +45,25 @@ class Solution():
                 res += 1
         return res
 
+# class Solution2(object):
+#     # def __init__(self):
+#     #     self.res = 0
+#     def countSubstrings(self, str):
+#         if not str:
+#             return 0
+#         res = []
+#         for i in range(len(str)):
+#             self.helper(str, i, i, res)
+#             self.helper(str, i, i + 1, res)
+#         return len(res)
+
+#     def helper(self, str, i, j, res):
+#         while(i >= 0 and j < len(str) and str[i] == str[j]):
+#             i -= 1 
+#             j += 1
+#             res.append(1)  
+
+
 # Time complexity O(n)
 # Space complexity O(1)
 
@@ -70,7 +89,7 @@ class Solution1():
 
 #测试实例
 if __name__ == '__main__':
-    a = Solution1()
+    a = Solution2()
     str = "aaa"
     str1 = "abc"
     str2 = "aa"
