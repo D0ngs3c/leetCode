@@ -6,5 +6,5 @@
 - 边界
 - 状态转移公式<br>
 
-新手可以通过以及[DP算法的漫画讲解](https://blog.csdn.net/baidu_37107022/article/details/73188963)
+可以通过以及[漫画说算法--动态规划算法](https://blog.csdn.net/baidu_37107022/article/details/73188963)
 和[实例:Rob](https://github.com/dongdxu/leetCode/blob/master/rob.py)深入理解。
