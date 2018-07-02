@@ -76,23 +76,26 @@ class Solution1(object):
             dp = ndp
         return dp[-1]
 
+        
+        
 # #自底而上
-# class Solution2(object):
-#     def minimumDeleteSum(self, s1, s2):
-#         # dp = [[0] * (len(s2) + 1)] * (len(s1) + 1)
-#         dp = [[0] * (len(s2) + 1) for _ in xrange(len(s1) + 1)]
-#         for i in range(1, len(s1) + 1):
-#             dp[i][0] = dp[i-1][0] + ord(s1[i-1])
-#         for j in range(1, len(s2) + 1):
-#             dp[0][j] = dp[0][j-1] + ord(s2[j-1])
+class Solution2(object):
+    def minimumDeleteSum(self, s1, s2):
+        # dp = [[0] * (len(s2) + 1)] * (len(s1) + 1)
+        dp = [[0] * (len(s2) + 1) for _ in xrange(len(s1) + 1)]
+        for i in range(1, len(s1) + 1):
+            dp[i][0] = dp[i-1][0] + ord(s1[i-1])
+        for j in range(1, len(s2) + 1):
+            dp[0][j] = dp[0][j-1] + ord(s2[j-1])
 
-#         for j in range(1, len(s2) + 1):
-#             dp[i][j] = (dp[i - 1][j - 1]  if s1[i - 1] == s2[j - 1] else min(dp[i - 1][j] + ord(s1[i - 1]), dp[i][j - 1] + ord(s2[j - 1])))
-#         #     a = 0 if ord(s1[i-1]) == ord(s2[j-1]) else ord(s1[i-1]) + ord(s2[j-1])
-#         # #比较三种情况
-#         #     dp[i][j] = min(dp[i-1][j-1] + a, min(dp[i-1][j] + ord(s1[i-1]), dp[i][j-1] + ord(s2[j-1])))
+        for i in range(1, len(s1) + 1):
+            for j in range(1, len(s2) + 1):
+                dp[i][j] = (dp[i - 1][j - 1]  if s1[i - 1] == s2[j - 1] else min(dp[i - 1][j] + ord(s1[i - 1]), dp[i][j - 1] + ord(s2[j - 1])))
+        #     a = 0 if ord(s1[i-1]) == ord(s2[j-1]) else ord(s1[i-1]) + ord(s2[j-1])
+        # #比较三种情况
+        #     dp[i][j] = min(dp[i-1][j-1] + a, min(dp[i-1][j] + ord(s1[i-1]), dp[i][j-1] + ord(s2[j-1])))
 
-#         return dp[len(s1)][len(s2)]
+        return dp[len(s1)][len(s2)]
 
 
 
@@ -104,6 +107,6 @@ if __name__ == '__main__':
     c = Solution2()
     s1 = "delete"
     s2 = "leet"
-    # print a.minimumDeleteSum(s1, s2)
+    print a.minimumDeleteSum(s1, s2)
     print b.minimumDeleteSum(s1, s2)
     print c.minimumDeleteSum(s1, s2)
