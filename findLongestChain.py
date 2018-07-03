@@ -47,6 +47,8 @@ class Solution(object):
 
 # Time complexity O(n)
 # Space complexity O(len(stack))
+
+
 #测试实例
 if __name__ == '__main__':
     a = Solution()
