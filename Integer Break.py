@@ -50,6 +50,9 @@ class Solution(object):
 
         return res * n
 
+# Time complexity O(n)
+# Space complexity O(1)
+
 #公式法 
 class Solution1(object):
     def integerBreak(self, n):
@@ -66,6 +69,8 @@ class Solution1(object):
 
         return (3 ** (n / 3 + 1)) * (n % 3 + 2)
 
+# Time complexity O(1)
+# Space complexity O(1)
 
 #观察上面列出的10之前数字的规律，还可以发现数字7拆分结果是数字4的三倍，而7比4正好大三，数字8拆分结果是数字5的三倍，而8比5大3，后面都是这样的规律。那么可以把数字6之前的拆分结果都列举出来，然后之后的数通过查表都能计算出来。
 class Solution2(object):
@@ -80,6 +85,8 @@ class Solution2(object):
 
         return lis[n]
 
+# Time complexity O(n)
+# Space complexity O(n)
 
 #测试实例
 if __name__ == '__main__':
