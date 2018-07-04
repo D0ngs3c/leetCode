@@ -29,6 +29,15 @@ Note:
 '''
 
 
+
+'''
+动态规划
+
+要从第一i天过渡到第一i+1天，
+要么出售已有的股票，cash = max(cash, hold + prices[i] - fee)
+要么买入股票，hold = max(hold, cash - prices[i])
+由于第i天的情况只和i-1天有关，所以用两个变量cash和hold就可以，不需要用数组。
+'''
 class Solution(object):
     def maxProfit(self, prices, fee):
         # cash: 手头的现金，即总的赚的金额，同时也是未持股时的现金额
@@ -40,6 +49,9 @@ class Solution(object):
             # hold 其实代表买入的最低价
             hold = max(hold, cash - prices[i])
         return cash
+
+# Time complexity O(n)
+# Space complexity O(1)
 
 
 #测试实例
