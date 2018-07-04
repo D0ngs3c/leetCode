@@ -32,22 +32,39 @@ Note:
 
 '''
 动态规划
-
 要从第一i天过渡到第一i+1天，
-要么出售已有的股票，cash = max(cash, hold + prices[i] - fee)
-要么买入股票，hold = max(hold, cash - prices[i])
-由于第i天的情况只和i-1天有关，所以用两个变量cash和hold就可以，不需要用数组。
+某一天只有两种可能：手上持有一股、手上未持股。
+设第i天未持股最大收益为cash[i]
+设第i天持有一股时的最大收益为hold[i]
+
+首先分析cash[i]：
+    第i天未持股又分两种情况：
+        1、假设第i-1天也未持股，第i天继续不持股（不买入）的收益与i-1天相同，即cash[i] = cash[i-1]
+        2、假设第i-1天持有一股，第i天卖出股票的收益更高，即cash[i] = hold[i-1] + prices[i] - fee
+    所以：第i天未持股的最大收益取这两种情况的最大值，即：cash[i] = max(cash[i], hold[i-1] + prices[i] - fee)
+
+接下来分析hold[i]：
+    第i天持有一股也分为两种情况：
+        1、假设第i-1天未持股，第i天买入一股的收益更高，即hold[i] = cash[i-1] - prices[i]
+        2、假设第i-1天持有一股，第i天继续持该股的收益与i-1天相同，即hold[i] = hold[i-1]
+    所以：第i天持一股的最大收益去这两种情况的最大值，即：hold[i] = max(cash[i-1] -prices[i], hold[i])
+
+最后cash[-1]为该题所求。
+
+内存优化：
+    由于第i天的情况只和i-1天有关，所以用两个变量cash和hold就可以，不需要用数组。
+
 '''
 class Solution(object):
     def maxProfit(self, prices, fee):
-        # cash: 手头的现金，即总的赚的金额，同时也是未持股时的现金额
-        # hold: 手中有持股时的现金，即总金额减去手中股票的买入价
+
         cash, hold = 0, -prices[0]
+
         for i in range(1, len(prices)):
-            # 如果卖出持股比未持股赚，则卖出
+            
             cash = max(cash, hold + prices[i] - fee)
-            # hold 其实代表买入的最低价
             hold = max(hold, cash - prices[i])
+
         return cash
 
 # Time complexity O(n)
