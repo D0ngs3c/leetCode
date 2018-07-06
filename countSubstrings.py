@@ -32,7 +32,7 @@ class Solution(object):
     def countSubstrings(self, str):
         if not str:
             return 0
-        self.res = 0
+        self.res = 0 #加self为全局变量。不加会出错。
         for i in range(len(str)):
             self.helper(str, i, i, self.res)
             self.helper(str, i, i + 1, self.res)
