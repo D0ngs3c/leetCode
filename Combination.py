@@ -26,7 +26,7 @@ class Solution:
         def dfs(start, valuelist):
             if self.count == k:        #count就等于组合的长度
                 ret.append(valuelist)
-                return                 #return 返回？？？
+                return                 #return 退出此次函数，递归实现回溯。
             for i in range(start, n + 1):
                 self.count += 1
                 dfs(i + 1, valuelist + [i])
