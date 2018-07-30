@@ -66,9 +66,9 @@ class Solution1(object):
             backtrack(s, i + 1, res)
             if s[i].isalpha():
                 tmp = ord(s[i])
-                tmp ^= (1 << 5)
+                tmp ^= (1 << 5)  #通过ASCII码的形式 改变大小写
                 # tmp += 32
-                s = rep(s, i, chr(tmp))  #通过ASCII码的形式 改变大小写
+                s = rep(s, i, chr(tmp))  
                 backtrack(s, i + 1, res)
 
         backtrack(S, 0, res)
