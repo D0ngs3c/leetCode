@@ -78,6 +78,3 @@ if __name__ == '__main__':
     a = Solution1()
     S = "rmR"
     print a.letterCasePermutation(S)
-
-
-    # res = ["rmr","rmR","rMr","rMR","Rmr","RmR","RMr","RMR"]
