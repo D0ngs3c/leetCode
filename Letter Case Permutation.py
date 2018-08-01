@@ -45,9 +45,6 @@ class Solution1(object):
         :rtype: List[str]
         """
         res = []
-        # s = list(S)
-        # S = S.lower()
-
         l = len(S)
 
         #替换字符串string中指定位置p的字符为c
@@ -57,7 +54,6 @@ class Solution1(object):
                 new.append(s)
             new[p] = c
             return ''.join(new)
-
 
         def backtrack(s, i, res):
             if i == l:
